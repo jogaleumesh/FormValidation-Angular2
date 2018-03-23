@@ -1,0 +1,27 @@
+<div class="card-container">
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+        <div class="form-group" [ngClass]="displayFieldCss('mobile')" >
+          <label for="tel">Mobile:</label>
+          <input type="tel" class="form-control"  formControlName="mobile">
+        </div>
+        <field-error-display [displayError]="isFieldValid('mobile')"></field-error-display>
+
+        <div class="form-group" [ngClass]="displayFieldCss('email')">
+          <label for="email">Email:</label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+        <field-error-display [displayError]="isFieldValid('email')"></field-error-display>
+
+        <div class="form-group" [ngClass]="displayFieldCss('password')">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+        <field-error-display [displayError]="isFieldValid('password')"></field-error-display>
+        
+
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
